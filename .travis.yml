@@ -8,7 +8,7 @@ services:
 env:
   - DOCKER_COMPOSE_VERSION=1.11.2
 
-install: true
+#install: true
 
 before_install:
   - docker --version
