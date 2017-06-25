@@ -14,3 +14,4 @@ before_install:
   - docker --version
   - docker-compose --version
   - git clone --depth=50 --branch=master https://github.com/OpenChirp/server_docker.git 
+  - ls
