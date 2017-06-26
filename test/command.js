@@ -1,11 +1,11 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
-let mongoose = require('mongoose');
+let mong = require('mongoose');
 let Device = require('../src/models/device');
 let User = require('../src/models/user');
 let commandSchema = require('../src/models/command_schema');
-let Command = mongoose.model('Command', commandSchema);
+let Command = mong.model('Command', commandSchema);
 
 //Require the dev-dependencies
 let chai = require('chai');
