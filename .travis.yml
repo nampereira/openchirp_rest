@@ -10,10 +10,13 @@ services:
 
 before_install:
   - git clone https://github.com/OpenChirp/server_docker.git 
+  - cp ./server_docker/node/config/docker.json config/test.json
+  - cat config/test.json 
   - cd server_docker
   - docker-compose -f docker-compose.yml -f docker-compose.test-rest.yml up -d
   - cd ..
-  - wget https://raw.githubusercontent.com/OpenChirp/server_docker/master/node/config/test.json -O config/test.json
-  - echo $NODE_ENV
-  - export NODE_ENV=test
   
+install: true
+
+script: cd server_docker && docker exec -it serverdocker_rest_1 npm test
+
