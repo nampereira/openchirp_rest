@@ -7,8 +7,6 @@ node_js:
   
 services:
   - docker
-  
-#install: true
 
 before_install:
   - git clone https://github.com/OpenChirp/server_docker.git 
