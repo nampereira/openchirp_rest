@@ -13,6 +13,7 @@ before_install:
   - cd server_docker
   - docker-compose -f docker-compose.yml -f docker-compose.test-rest.yml up -d
   - cd ..
-  - wget https://raw.githubusercontent.com/OpenChirp/server_docker/master/node/config/test.json -o config/test.json
+  - wget https://raw.githubusercontent.com/OpenChirp/server_docker/master/node/config/test.json -O config/test.json
+  - echo $NODE_ENV
   - export NODE_ENV=test
   
