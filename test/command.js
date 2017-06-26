@@ -1,17 +1,17 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
-var Mongoose = require('mongoose');
-var Device = require('../src/models/device');
-var User = require('../src/models/user');
-var commandSchema = require('../src/models/command_schema');
-var Command = Mongoose.model('Command', commandSchema);
+let Mongoose = require('mongoose');
+let Device = require('../src/models/device');
+let User = require('../src/models/user');
+let commandSchema = require('../src/models/command_schema');
+let Command = Mongoose.model('Command', commandSchema);
 
 //Require the dev-dependencies
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-var server = require('../src/app');
-var should = chai.should();
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+let server = require('../src/app');
+let should = chai.should();
 
 chai.use(chaiHttp);
 
