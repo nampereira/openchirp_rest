@@ -17,5 +17,8 @@ before_install:
   - cd ..
 install: true
 
-script: cd server_docker && docker exec -it serverdocker_rest_1 npm install && && docker exec -it serverdocker_rest_1 npm test
+script: 
+  - cd server_docker
+  - docker exec -it serverdocker_rest_1 npm install
+  - docker exec -it serverdocker_rest_1 npm test
 
