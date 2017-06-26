@@ -1,7 +1,7 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
-let mong = require('mongoose');
+var mong = require('mongoose');
 let Device = require('../src/models/device');
 let User = require('../src/models/user');
 let commandSchema = require('../src/models/command_schema');
