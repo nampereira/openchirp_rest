@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nampereira/openchirp_rest.svg?branch=master)](https://travis-ci.org/nampereira/openchirp_rest)
+
 # OpenChirp REST API
 
 ## Documentation
