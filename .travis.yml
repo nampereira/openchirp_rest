@@ -14,11 +14,12 @@ before_install:
   - cd server_docker
   - git clone https://github.com/nampereira/openchirp_rest.git ./node/code
   - docker-compose -f docker-compose.yml -f docker-compose.test-rest.yml up -d
+  - docker exec -it serverdocker_rest_1 npm install
   - cd ..
+  
 install: true
 
 script: 
   - cd server_docker
-  - docker exec -it serverdocker_rest_1 npm install
   - docker exec -it serverdocker_rest_1 npm test
 
