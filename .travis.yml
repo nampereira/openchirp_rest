@@ -31,6 +31,8 @@ script:
 
 after_script:
   - cd ../openchirp_rest/src
+  - npm install -g istanbul
+  - istanbul cover app.js
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT; fi
