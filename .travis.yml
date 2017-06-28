@@ -1,7 +1,7 @@
 env:
-  global:
-    - CC_TEST_REPORTER_ID=a574ea4e1122dd71b69bd2d0627b887335fe9ffce9ef2788b22696232337a59f
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+#  global:
+#    - CC_TEST_REPORTER_ID=a574ea4e1122dd71b69bd2d0627b887335fe9ffce9ef2788b22696232337a59f
+#    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
 
 sudo: required
 
@@ -29,10 +29,10 @@ install: true
 script: 
   - docker exec -it serverdocker_rest_1 npm test
 
-after_script:
-  - cd ../openchirp_rest/src
-  - npm install -g istanbul
-  - istanbul cover app.js
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT; fi
+#after_script:
+#  - cd ../openchirp_rest/src
+#  - npm install -g istanbul
+#  - istanbul cover app.js
+#  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+#  - chmod +x ./cc-test-reporter
+#  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT; fi
