@@ -12,7 +12,7 @@ services:
 
 before_install:
   - cd ..
-  - rm -fr openchirp_rest
+  #- rm -fr openchirp_rest
   - git clone https://github.com/OpenChirp/server_docker.git 
   - cd server_docker
   - git clone https://github.com/nampereira/openchirp_rest.git ./node/code
@@ -26,11 +26,11 @@ before_install:
   
 install: true
 
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-
 script: 
   - docker exec -it serverdocker_rest_1 npm test
+
+after_script:
+  - cd ../openchirp_rest/src
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT; fi
- 
