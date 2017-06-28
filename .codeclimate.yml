@@ -2,6 +2,10 @@ engines:
   duplication:
     enabled: false
   eslint:
-    enabled: false
+    enabled: true
   csslint:
     enabled: false
+
+ratings:
+  paths:
+  - src/**
